@@ -8,17 +8,20 @@ import HomePage from './pages/homepage/homepage.component';
 import InvoicePage from './pages/invoice/invoicepage.component';
 import BalancePage from './pages/balance/balance.component';
 
+
+
 class App extends React.Component{
 
   render(){
     return (
-      <div classname='app'>
+      <div className='app'>
         <Header />
         <Switch>
           <Route exact={true} path='/' component={HomePage}/>
           <Route path='/invoice' component={InvoicePage}/>
           <Route path='/balance' component={BalancePage}/>
         </Switch>
+
       </div>
     );  
   }

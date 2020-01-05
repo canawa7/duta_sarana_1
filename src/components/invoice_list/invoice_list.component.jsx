@@ -1,6 +1,7 @@
 import React from 'react';
 import './invoice_list.styles.scss';
 import MaterialTable from "material-table";
+import { Link } from 'react-router-dom';
 
 const InvoiceList = (props) => {
     const [state, setState] = React.useState({
@@ -17,13 +18,18 @@ const InvoiceList = (props) => {
                 title: "Product",
                 field: "product",
             },
-            { 
-                title: "Cost/Item", 
-                field: "cost_per_item",  
-            },
+            
             { 
                 title: "Quantity", 
                 field: "quantity",  
+            },
+            { 
+                title: "Unit", 
+                field: "unit",  
+            },
+            { 
+                title: "Cost/Item", 
+                field: "cost_per_item",  
             },
             {
                 title: "Total Cost",
@@ -39,8 +45,9 @@ const InvoiceList = (props) => {
                 id: 'ASDF66WE',
                 supplier: 'PT. Cipta Mortar Utama',
                 product: 'Cement',
-                cost_per_item: 5000,
                 quantity: 5,
+                unit: "L",
+                cost_per_item: 5000,
                 total_cost: 5000 * 5,
                 shipment_date:'19/1/20'
             },
@@ -50,7 +57,7 @@ const InvoiceList = (props) => {
       return (
         <div className='invoice-list'>
         <MaterialTable
-                title="Editable Example"
+                title="Invoice List"
                 columns={state.columns}
                 data={state.data}
                 editable={
